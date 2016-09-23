@@ -1,0 +1,6 @@
+---
+applications:
+  - name: pivotalicons
+    memory: 256M
+    path: ./build
+    buildpack: staticfile_buildpack
