@@ -57,8 +57,10 @@
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.4",
+    "lodash": "^4.16.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-search-input": "^0.10.3",
     "react-svg": "^1.1.2"
   },
   "scripts": {
