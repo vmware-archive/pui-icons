@@ -1,0 +1,56 @@
+@import '~bootstrap/scss/bootstrap';
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: $gray-lightest;
+  box-shadow: inset 0 4px 0 0 #138078;
+  color: #222;
+}
+
+.wrapper {
+  padding: 24px;
+}
+
+.icon-preview {
+  fill: #222;
+  height: 48px;
+  width: auto;
+}
+
+.icon-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon-list-item-content {
+  background-color: #fff;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0, .15);
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  width: 100%;
+}
+
+.icon-list-item {
+  display: flex; 
+  padding: 0.5em;
+  width: 100%;
+
+  @media all and (min-width: 40em) {
+    width: 50%;
+  }
+
+  @media all and (min-width: 60em) {
+      width: 33.33%;
+  }
+}
+
+.icon-classname {
+  text-align: center;
+  margin: 1.25em 0 0;
+  width: auto;
+}
