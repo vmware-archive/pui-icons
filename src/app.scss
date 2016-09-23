@@ -50,10 +50,15 @@ body {
   }
 }
 
+
 .icon-preview {
-  fill: #222;
-  height: 48px;
-  width: auto;
+  text-align: center;
+  
+  svg {
+    fill: #222;
+    height: 48px;
+    width: auto;
+  }
 }
 
 .icon-list {

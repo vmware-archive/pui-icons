@@ -8,7 +8,7 @@ class IconGrid extends Component {
         <IconGridItem
           key={index}
           path={icon.imageSrc}
-          name={icon.imageName}>
+          name={icon.fileName}>
         </IconGridItem> 
       );
     })

@@ -1,39 +1,37 @@
 import React, { Component } from 'react';
 import IconGrid from './IconGrid.js';
 import SadGhost from './sad-ghost.svg';
-import ReactSVG from 'react-svg/dist/react-svg.js';
+import SearchInput, {createFilter} from 'react-search-input'
 import './app.scss';
-var _ = require('lodash');
-
-
-var req = require.context("./icons", true, /\.svg$/);
 
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      searchTerm: ''
+      searchTerm: '',
+      icons: []
     }
   }
 
-  filterIcons(event) {
-    this.setState({
-      searchTerm: event.target.value
-    })
-  }
-
-  getSVGs() {
+  componentWillMount() {
+    var req = require.context("./icons", true, /\.svg$/);
     var icons = [];
+
     icons = req.keys().map(function(key){
       var fileName = req(key).replace(/^.*[\\\/]/, '').split('.')[0];
 
       return { 
         imageSrc: req(key),
-        imageName: fileName
+        fileName: fileName
       };
     });
 
-    return icons;
+    this.setState({icons: icons});
+  }
+
+  searchUpdated(term) {
+    this.setState({searchTerm: term})
   }
 
   clearSearch() {
@@ -43,28 +41,25 @@ class App extends Component {
   };
 
   render() {
-    var icons = this.getSVGs();
-    var currentState = this.state.searchTerm;
-
-    var filteredIcons = _.filter(icons, function(icon) {
-      return icon.imageName.includes(currentState)
-    });
+    const filteredIcons = this.state.icons.filter(createFilter(this.state.searchTerm, ['fileName']))
 
     return (
 
       <main>
         <div className="icon-search-bar">
-          <input type="text" placeholder="Search for icons" value={this.state.searchTerm} onChange={this.filterIcons.bind(this)} />
+          <SearchInput className="search-input" onChange={this.searchUpdated.bind(this)} />
         </div>
         <div className="wrapper">
-          <IconGrid icons={filteredIcons}></IconGrid>
+          <IconGrid icons={ filteredIcons }></IconGrid>
+          {/*
           {
-            filteredIcons.length === 0 &&
+            this.state.icons.length === 0 &&
               <div className="empty-state">
                 <ReactSVG path={SadGhost} className={'empty-state-icon'}/>
                 <button className="btn btn-secondary" onClick={this.clearSearch.bind(this)}>Clear Search</button>
               </div>
           }
+          */}
         </div>
       </main>
     );
