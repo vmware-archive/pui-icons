@@ -1,19 +1,19 @@
-# Install Dependencies
+### Install Dependencies
 ```
 npm install
 ```
 
-# Spin Up Dev Server
+### Spin Up Dev Server
 ```
 npm start
 ```
 
-# Build Site
+### Build Site
 ```
 npm run build
 ```
 
-# Deploy Site
+### Deploy Site
 ```
 cf push
 ```
