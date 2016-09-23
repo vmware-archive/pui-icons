@@ -52,13 +52,9 @@ body {
 
 
 .icon-preview {
+  height: 48px;
   text-align: center;
-  
-  svg {
-    fill: #222;
-    height: 48px;
-    width: auto;
-  }
+  width: auto;
 }
 
 .icon-list {
