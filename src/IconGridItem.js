@@ -7,10 +7,12 @@ class IconGridItem extends Component {
     return(
       <li key={this.props.path} className="icon-list-item">
         <div className="icon-list-item-content">
-          <ReactSVG
-            path={this.props.path}
-            className="icon-preview"
-          />
+          <div className="svgicon">
+            <ReactSVG
+              path={this.props.path}
+              className="icon-preview"
+            />
+          </div>
           <pre className="icon-classname">{ this.props.name }</pre>
         </div>
       </li>

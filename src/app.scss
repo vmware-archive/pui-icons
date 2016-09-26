@@ -1,6 +1,10 @@
 $font-family-sans-serif: 'Inconsolata', 'Helvetica Neue', 'Helvetica', sans-serif;
 
 @import '~bootstrap/scss/bootstrap';
+@import 'variables';
+@import 'boxshadows';
+
+
 
 body, html {
   height: 100%;
@@ -47,7 +51,7 @@ body {
   }
 
   input:focus {
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .15);
+    box-shadow: $box-shadow-key-2;
     outline: 0;
   }
 }
@@ -71,24 +75,34 @@ body {
   }
 }
 
-.icon-preview {
-  height: 48px;
-  text-align: center;
-  width: auto;
-}
-
 .icon-list {
   display: flex;
   flex-wrap: wrap;
 }
 
+.svgicon {
+  display: inline-flex;
+  line-height: inherit;
+  align-self:center;
+}
+.svgicon svg {
+
+  height: 1em;
+  width: 1em;
+}
+
 .icon-list-item-content {
+  @extend .box-shadow-1;
   background-color: #fff;
-  box-shadow: 0 2px 3px 0 rgba(0,0,0, .15);
   display: flex;
   flex-direction: column;
-  padding: 1em;
+  // padding: 1em;
+  padding:($spacing-base*2) 0;
   width: 100%;
+  font-size:40px;
+  .svgicon svg {
+    fill: #3D4A51;
+  }
 }
 
 .icon-list-item {
@@ -101,7 +115,8 @@ body {
   }
 
   @media all and (min-width: 60em) {
-      width: 33.33%;
+      //width: 33.33%;
+      width:20%;
   }
 }
 
@@ -109,4 +124,5 @@ body {
   text-align: center;
   margin: 1.25em 0 0;
   width: auto;
+  font-size:12px;
 }

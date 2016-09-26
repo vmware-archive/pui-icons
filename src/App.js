@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import IconGrid from './IconGrid.js';
 import SadGhost from './sad-ghost.svg';
-import CloseIcon from './icons/close.svg';
 import './app.scss';
 
 class App extends Component {
@@ -20,6 +19,8 @@ class App extends Component {
 
     icons = req.keys().map(function(key){
       var fileName = req(key).replace(/^.*[\\\/]/, '').split('.')[0];
+
+      console.log(fileName);
 
       return { 
         imageSrc: req(key),
@@ -51,12 +52,6 @@ class App extends Component {
       <main>
         <div className="icon-search-bar">
           <input placeholder="Search for icons" className="search-input" value={this.state.searchTerm} onChange={this.searchUpdated.bind(this)} />
-          {
-            this.state.searchTerm.length > 0 &&
-            <button className="btn-clear-search">
-              <img src={CloseIcon} alt="Clear Search" onClick={this.clearSearch.bind(this)} />
-            </button>
-          }
         </div>
         <div className="wrapper">
           <IconGrid icons={ filteredIcons }></IconGrid>
