@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import IconGrid from './IconGrid.js';
 import SadGhost from './sad-ghost.svg';
 import CloseIcon from './icons/close.svg';
-import SearchInput, {createFilter} from 'react-search-input'
 import './app.scss';
 
 class App extends Component {
@@ -31,8 +30,8 @@ class App extends Component {
     this.setState({icons: icons});
   }
 
-  searchUpdated(term) {
-    this.setState({searchTerm: term})
+  searchUpdated(event) {
+    this.setState({searchTerm: event.target.value})
   }
 
   clearSearch() {
@@ -42,13 +41,17 @@ class App extends Component {
   };
 
   render() {
-    const filteredIcons = this.state.icons.filter(createFilter(this.state.searchTerm, ['fileName']))
+    var activeSearch = this.state.searchTerm;
+
+    const filteredIcons = this.state.icons.filter(function(icon) {
+      return icon.fileName.includes(activeSearch);
+    });
 
     return (
 
       <main>
         <div className="icon-search-bar">
-          <SearchInput className="search-input" value={this.state.searchTerm} onChange={this.searchUpdated.bind(this)} />
+          <input placeholder="Search for icons" className="search-input" value={this.state.searchTerm} onChange={this.searchUpdated.bind(this)} />
           {
             this.state.searchTerm.length > 0 &&
             <button className="btn-clear-search">
