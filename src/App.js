@@ -47,19 +47,17 @@ class App extends Component {
 
       <main>
         <div className="icon-search-bar">
-          <SearchInput className="search-input" onChange={this.searchUpdated.bind(this)} />
+          <SearchInput className="search-input" value={this.state.searchTerm} onChange={this.searchUpdated.bind(this)} />
         </div>
         <div className="wrapper">
           <IconGrid icons={ filteredIcons }></IconGrid>
-          {/*
           {
-            this.state.icons.length === 0 &&
+            filteredIcons.length === 0 &&
               <div className="empty-state">
-                <ReactSVG path={SadGhost} className={'empty-state-icon'}/>
+                <img src={SadGhost} className={'empty-state-icon'}/>
                 <button className="btn btn-secondary" onClick={this.clearSearch.bind(this)}>Clear Search</button>
               </div>
           }
-          */}
         </div>
       </main>
     );
