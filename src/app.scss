@@ -36,6 +36,7 @@ body {
 
 .icon-search-bar {
   background: #fff;
+  position: relative;
 
   input {
     border: 0;
@@ -51,6 +52,24 @@ body {
   }
 }
 
+.btn-clear-search {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  display: flex;
+  height: 26px;
+  position: absolute;
+  right: 26px;
+  top: 26px;
+  width: 26px;
+
+  img {
+    height: auto;
+    opacity: .35;
+    width: 100%;
+  }
+}
 
 .icon-preview {
   height: 48px;
