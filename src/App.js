@@ -42,7 +42,6 @@ class App extends Component {
 
   render() {
     var activeSearch = this.state.searchTerm;
-
     const filteredIcons = this.state.icons.filter(function(icon) {
       return icon.fileName.includes(activeSearch);
     });
