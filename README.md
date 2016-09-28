@@ -15,5 +15,5 @@ npm run build
 
 ### Deploy Site
 ```
-cf push
+rake pws_deploy
 ```
