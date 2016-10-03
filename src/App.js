@@ -70,6 +70,7 @@ class App extends Component {
         { this.state.navClass }
         <div id="iconSearchBar" className="icon-search-bar" ref={(ref) => this.iconSearchBar = ref} >
           <input placeholder="Search for icons" className="search-input" value={this.state.searchTerm} onChange={this.searchUpdated.bind(this)} />
+
         </div>
         <div className="wrapper">
           <IconGrid icons={ filteredIcons }></IconGrid>
@@ -81,6 +82,15 @@ class App extends Component {
               </div>
           }
         </div>
+        <footer className="p-y-2">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-12 text-xs-center">
+                <a href="https://github.com/pivotal-cf/pui-icons" target="_blank">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+        </footer>
       </main>
     );
   }

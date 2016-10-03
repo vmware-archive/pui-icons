@@ -1,4 +1,6 @@
 $font-family-sans-serif: 'Inconsolata', 'Helvetica Neue', 'Helvetica', sans-serif;
+$green: #138078;
+$link-color: #179990;
 
 @import '~bootstrap/scss/bootstrap';
 @import 'variables';
@@ -37,7 +39,7 @@ body {
 
 .icon-search-bar {
   background: #fff;
-  border-top: 4px solid #138078;
+  border-top: 4px solid $green;
   left: 0;
   position: fixed;
   right: 0;
