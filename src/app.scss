@@ -110,13 +110,13 @@ body {
   width: 100%;
   font-size:40px;
 
-  .svgicon svg, .svgicon svg path {
+  .svgicon svg {
     fill: #3D4A51;
   }
 }
 
 .icon-list-item {
-  display: flex; 
+  display: flex;
   padding: 0.5em;
   width: 100%;
 
