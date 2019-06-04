@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {FlexCol} from 'pivotal-ui/react/flex-grids';
 import IconGridItem from './IconGridItem.js';
 
 class IconGrid extends Component {
@@ -16,9 +17,9 @@ class IconGrid extends Component {
 
   render() {
     return(
-      <ul className="icon-list list-unstyled">
+      <FlexCol className="icon-list centered">
         { this.createGrid() }
-      </ul>
+      </FlexCol>
     );
   }
 }

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "node-sass": "^3.10.0",
+    "node-sass": "^4.10.0",
     "sass-loader": "^4.0.2",
     "autoprefixer": "6.4.1",
     "babel-core": "6.14.0",
@@ -58,6 +58,7 @@
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.4",
     "lodash": "^4.16.1",
+    "pivotal-ui": "^18.0.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-svg": "^1.1.2"

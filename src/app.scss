@@ -2,7 +2,7 @@ $font-family-sans-serif: 'Inconsolata', 'Helvetica Neue', 'Helvetica', sans-seri
 $green: #138078;
 $link-color: #179990;
 
-@import '~bootstrap/scss/bootstrap';
+@import "~pivotal-ui/css/variables-and-mixins/pui-variables";
 @import 'variables';
 @import 'boxshadows';
 
@@ -12,7 +12,7 @@ body, html {
 }
 
 body {
-  background: $gray-lightest;
+  background: $light-gray;
   color: #222;
   padding-top: calc(82px + 0px);
 }
@@ -21,25 +21,22 @@ body {
   padding: 24px;
 }
 
-.empty-state {
-  align-items: center;
+.centered {
   display: flex;
-  flex-direction: column;
-  height: calc(100vh - 200px);
+  align-items: center;
   justify-content: center;
-  text-align: center;
 }
 
 .empty-state-icon {
-  fill: $gray-light;
+  fill: $gray;
   opacity: .20;
-  margin: 0 0 2em;
+  margin: 1em;
   width: 100px;
 }
 
 .icon-search-bar {
   background: #fff;
-  border-top: 4px solid $green;
+  border-top: 4px solid $accent-teal;
   left: 0;
   position: fixed;
   right: 0;
@@ -134,4 +131,9 @@ body {
   margin: 1.25em 0 0;
   width: auto;
   font-size:12px;
+}
+
+footer {
+  margin: 16px 0;
+  color: $accent-teal;
 }
